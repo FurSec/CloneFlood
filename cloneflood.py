@@ -4,7 +4,6 @@ import time
 import random
 import threading
 import socks
-import sys
 
 global_command = ''
 server = socket.gethostbyname('SERVER.COM')
