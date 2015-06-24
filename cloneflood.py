@@ -5,7 +5,6 @@ import random
 import threading
 import socks
 import sys
-import string
 import json
 
 global_command = ''
