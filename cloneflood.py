@@ -14,8 +14,6 @@ with open('proxylist.txt','r'): as p:
 	
 with open('wordlist.txt','r') as w: #generate a randomized limited pool of names
 	wordlist = w.read().splitlines()
-	random_index = random.randint(0,len(wordlist) - 500)
-	small_list = wordlist[random_index:(random_index + 500)]
 
 class userinput(threading.Tread): #Commands must be entered !COMMAND (example: !PRIVMSG #CHANNEL : TEST)
 	def run(self):
@@ -34,7 +32,7 @@ class irc(threading.Thread): #creating drone
 			split_proxy = proxy.split(":")
 			ircsock.setproxy(socks.PROXY_TYPE_HTTP, split_proxy[0], int(split_proxy[1]))
 			ircsock.connect((server, port))
-			ircsock.send('USER %s gnu gnu :%s\r\n' % (random.choice(small_list),random.choice(small_list)))
+			ircsock.send('USER %s gnu gnu :%s\r\n' % (random.choice(wordlist),random.choice(wordlist)))
 			ircsock.send('NICK %s\r\n' % (random.choice(wordlist)))
 			data = ircsock.recv(1024)
 			if data[0:4] == 'PING':
