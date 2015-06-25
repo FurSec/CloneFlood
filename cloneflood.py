@@ -12,7 +12,7 @@ port = 6667
 with open('proxylist.txt','r'): as p:
 	proxies = p.read().splitlines()
 	
-with open('wordlist.txt','r') as w: #generate a randomized limited pool of names
+with open('wordlist.txt','r') as w: 
 	wordlist = w.read().splitlines()
 
 class userinput(threading.Tread): #Commands must be entered !COMMAND (example: !PRIVMSG #CHANNEL : TEST)
